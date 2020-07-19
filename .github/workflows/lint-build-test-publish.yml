@@ -29,11 +29,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node 12.x with registry access
+      - name: Setup Node 12.x
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          registry-url: https://npm.pkg.github.com/
       - run: yarn install
       - name: Build
         run: yarn build
