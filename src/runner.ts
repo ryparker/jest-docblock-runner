@@ -9,7 +9,7 @@ import type {
 } from 'jest-runner';
 import type {Config} from '@jest/types';
 
-import {scrapeJestTests} from './test-scraper';
+import {filterByPragma} from './filter-by-pragma';
 import TestRunner = require('jest-runner');
 
 export type TestBlock = {
@@ -17,18 +17,16 @@ export type TestBlock = {
 	docBlock?: string;
 };
 
-// Export type UserArgs: Record<string, string[]>;
-
 export default class AllureTestRunner extends TestRunner {
-	private readonly userArgs?: Record<string, string[]> = {};
+	private readonly _userArgs?: Record<string, string[]> = {};
 
 	constructor(globalConfig: Config.GlobalConfig, context?: JestTestRunnerContext) {
 		super(globalConfig, context);
-		// Super.testNamePattern = '(pragma is detected, when provided an @tag|pragma is detected, when provided a description located above the pragma)';
-		const cliArgs = process.argv.slice(2);
-		this.userArgs = this.extractArgs(cliArgs);
 
-		console.log('this.userArgs:', this.userArgs);
+		const cliArgs = process.argv.slice(2);
+		this._userArgs = this._extractArgs(cliArgs);
+
+		console.debug('User arguments:', this._userArgs);
 	}
 
 	async runTests(
@@ -38,14 +36,12 @@ export default class AllureTestRunner extends TestRunner {
 		onResult: JestOnTestSuccess,
 		onFailure: JestOnTestFailure,
 		options: JestTestRunnerOptions): Promise<void> {
-		const testsToRun = this.userArgs ? scrapeJestTests(tests, this.userArgs) : tests;
-
-		testsToRun.map(t => console.log('testNamePattern:', t.context.config.testNamePattern));
+		const testsToRun = this._userArgs ? filterByPragma(tests, this._userArgs) : tests;
 
 		return super.runTests(testsToRun, watcher, onStart, onResult, onFailure, options);
 	}
 
-	private extractArgs(cliArgs: string[]) {
+	private _extractArgs(cliArgs: string[]) {
 		if (cliArgs.length === 0) {
 			return;
 		}
@@ -55,8 +51,10 @@ export default class AllureTestRunner extends TestRunner {
 		for (const arg of cliArgs) {
 			const [key, value] = arg.split('=', 2);
 
-			// Removing "--" prefix from key
-			// Removing possible spaces from comma separated values
+			/** @privateRemarks
+			 *  Removing "--" prefix from key.
+			 *  Removing possible spaces from comma separated values.
+			 */
 			collectedArgs[key.slice(2)] = value.split(',').map(s => s.trim());
 		}
 
