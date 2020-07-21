@@ -10,6 +10,7 @@
   "main": "dist",
   "types": "dist/index.d.ts",
   "scripts": {
+    "postinstall": "patch-package",
     "build": "yarn clean && tsc",
     "test": "yarn build && jest",
     "lint": "xo .",
@@ -46,7 +47,9 @@
   "dependencies": {
     "@typescript-eslint/experimental-utils": "^3.7.0",
     "jest-docblock": "^26.0.0",
-    "jest-runner": "^26.1.0"
+    "jest-runner": "^26.1.0",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",

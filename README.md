@@ -7,15 +7,18 @@
 
 Run Jest tests by docBlock pragmas like those used in [jest-circus-allure-environment](https://github.com/ryparker/jest-circus-allure-environment)
 
-__**Note**: This is currently under development.__
+**🚧 This is currently under development. 🚧**
 
-## TODO:
+## ➕ Jest patches
 
-- [ ] Get [this Jest PR](https://github.com/facebook/jest/pull/10294) merged or work with the Jest team to implement another solution that resolves [this issue](https://github.com/facebook/jest/issues/10288).
-- [ ] Add code coverage and more tests.
-- [ ] Add documentation to [Jest-Circus-Allure-Environment](https://github.com/ryparker/jest-circus-allure-environment).
+This project is contingent on [code changes to be approved and merged](https://github.com/facebook/jest/pull/10294) into the Jest project. For now I've implemented a workaround that applies [patches](./patches) to the Jest dependencies using [patch-package](https://github.com/ds300/patch-package). This should happen automatically after installing the dependencies with `yarn install` /`npm install`.
 
-## Quick start
+If for some reason the patches were not applied automatically you can apply them by running:
+```shell
+yarn run postinstall
+```
+
+## 🚀 Quick start
 
 1. Add dependency to project
 
@@ -56,3 +59,9 @@ yarn run jest --severity=critical
 ```
 
 __Note: This will accept comma separated values and/or multiple flags.__
+
+## TODO:
+
+- [ ] Get [this Jest PR](https://github.com/facebook/jest/pull/10294) merged or work with the Jest team to implement another solution that resolves [this issue](https://github.com/facebook/jest/issues/10288).
+- [ ] Add code coverage and more tests.
+- [ ] Add documentation to [Jest-Circus-Allure-Environment](https://github.com/ryparker/jest-circus-allure-environment).
