@@ -7,7 +7,7 @@ export type TestBlock = {
 	pragmas: string;
 };
 
-const TEST_BLOCK_REGEX = /(fit|it|xit|test|xtest)\(("|')(?<testName>[\S ]*)("|'),\s*\(\)\s*=>\s*{\s*(?<docBlock>\/\*\*?(.|\r?\n)*?\*\/)/gm;
+const TEST_BLOCK_REGEX = /(fit|it|xit|test|xtest)(.each\(\S*\))?\(\s*(["'`])(?<testName>[\S ]*)(["'`]),\s*(async\s*)?\((\S*)?\)\s*=>\s*{\s*(?<docBlock>\/\*\*?(.|\r?\n)*?\*\/)/gm;
 
 export const filterByPragma = (testFiles: JestTest[], pragmasToMatch: Record<string, string[]>) => {
 	if (testFiles.length === 0) {
@@ -31,7 +31,7 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 
 		const matchingTestBlocks = testBlocks.filter(testBlock => _doPragmasHaveMatchingValues(testBlock.pragmas, pragmasToMatch));
 
-		if (matchingTestBlocks) {
+		if (matchingTestBlocks.length > 0) {
 			const testNamePattern = matchingTestBlocks.map(testBlock => testBlock.name).join('|');
 
 			/** @privateRemarks
@@ -50,8 +50,6 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 			}
 			});
 		}
-
-		console.debug({matchingTestBlocks});
 	}
 
 	return matchingTestFiles;
@@ -66,8 +64,8 @@ function _findTestBlocksWithPragmas(source: string) {
 		if (match) {
 			const group = {...match.groups};
 			const name = group?.testName;
-			const docBlock = group?.docBlock.replace('\t', '');
-			const pragmas = parseDocBlockPragmas(docBlock);
+			const docBlock = group?.docBlock.replace(/\t/g, '');
+			const pragmas = {...parseDocBlockPragmas(docBlock)};
 
 			if (pragmas !== {}) {
 				groups.push({
@@ -89,7 +87,13 @@ function _doPragmasHaveMatchingValues(pragmas: Record<string, string | string[]>
 		const pragma = pragmas[pragmaKeyToMatch];
 		const pragmaToMatch = pragmasToMatch[pragmaKeyToMatch];
 
-		if (pragma && pragmaToMatch.some(valuesToMatch => pragma.includes(valuesToMatch))) {
+		if (!pragma) {
+			return false;
+		}
+
+		const hasMatchingPragmaValue = pragmaToMatch.some(valuesToMatch => pragma.includes(valuesToMatch));
+
+		if (hasMatchingPragmaValue) {
 			return true;
 		}
 	}

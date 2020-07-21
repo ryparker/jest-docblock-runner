@@ -14,8 +14,8 @@
     "postinstall": "patch-package",
     "build": "yarn clean && tsc",
     "test": "yarn build && jest",
-    "lint": "xo .",
-    "fix": "xo . --fix",
+    "lint": "xo src",
+    "fix": "xo src --fix",
     "clean": "rimraf dist"
   },
   "jest": {

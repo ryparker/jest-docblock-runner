@@ -25,8 +25,6 @@ export default class AllureTestRunner extends TestRunner {
 
 		const cliArgs = process.argv.slice(2);
 		this._userArgs = this._extractArgs(cliArgs);
-
-		console.debug('User arguments:', this._userArgs);
 	}
 
 	async runTests(
