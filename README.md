@@ -63,5 +63,6 @@ __Note: This will accept comma separated values and/or multiple flags.__
 ## TODO:
 
 - [ ] Get [this Jest PR](https://github.com/facebook/jest/pull/10294) merged or work with the Jest team to implement another solution that resolves [this issue](https://github.com/facebook/jest/issues/10288).
+- [ ] Add support for describe blocks.
 - [ ] Reach 100% code coverage.
 - [ ] Add documentation to [Jest-Circus-Allure-Environment](https://github.com/ryparker/jest-circus-allure-environment).
