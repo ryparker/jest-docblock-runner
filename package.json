@@ -1,7 +1,7 @@
 {
-  "name": "jest-allure-runner",
+  "name": "jest-docblock-runner",
   "version": "0.0.1",
-  "repository": "https://ryparker@github.com/ryparker/jest-allure-runner.git",
+  "repository": "https://ryparker@github.com/ryparker/jest-docblock-runner.git",
   "author": "Ryan Parker <ryan.parker3@outlook.com>",
   "license": "MIT",
   "files": [
