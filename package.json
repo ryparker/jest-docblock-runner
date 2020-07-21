@@ -35,6 +35,10 @@
     ]
   },
   "release": {
+    "branches": {
+      "name": "master",
+      "prerelease": true
+    },
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -76,16 +80,13 @@
   },
   "keywords": [
     "jest",
-    "allure",
-    "runner",
-    "reporter",
-    "circus",
-    "jest-circus-allure-environment",
     "tag",
+    "runner",
     "docBlock",
     "pragma",
-    "reports",
-    "collect"
+    "circus",
+    "collect",
+    "jest-circus-allure-environment"
   ],
   "config": {
     "commitizen": {
