@@ -1,6 +1,7 @@
 {
   "name": "jest-docblock-runner",
   "version": "0.2.0",
+  "description": "Run Jest tests by tagging your tests with docBlock pragmas.",
   "repository": "https://ryparker@github.com/ryparker/jest-docblock-runner.git",
   "author": "Ryan Parker <ryan.parker3@outlook.com>",
   "license": "MIT",
