@@ -1,4 +1,4 @@
-# [1.1.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.0.0...v1.1.0) (2020-07-21)
+# [0.1.0](https://github.com/ryparker/jest-docblock-runner/compare/v0.0.0...v0.1.0) (2020-07-21)
 
 
 ### Bug Fixes

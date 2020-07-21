@@ -1,6 +1,6 @@
 {
   "name": "jest-docblock-runner",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "repository": "https://ryparker@github.com/ryparker/jest-docblock-runner.git",
   "author": "Ryan Parker <ryan.parker3@outlook.com>",
   "license": "MIT",
