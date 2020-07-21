@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/ryparker/jest-docblock-runner/compare/v0.1.1...v0.1.2) (2020-07-21)
+
+
+### Bug Fixes
+
+* bumped package version to 0.2.0. To fix git/GitHub history ([4b056c9](https://github.com/ryparker/jest-docblock-runner/commit/4b056c9706222d3c1890c618730ee6cfd9e457c2))
+
 # [0.1.0](https://github.com/ryparker/jest-docblock-runner/compare/v0.0.0...v0.1.0) (2020-07-21)
 
 
