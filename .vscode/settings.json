@@ -11,5 +11,8 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "importsorter.generalConfiguration.sortOnBeforeSave": true
+  "importsorter.generalConfiguration.sortOnBeforeSave": true,
+  "cSpell.words": [
+    "docblock"
+  ]
 }
