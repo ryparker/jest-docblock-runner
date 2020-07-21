@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.0.0...v1.1.0) (2020-07-21)
+
+
+### Bug Fixes
+
+* **ci:** fixed semantic-release branch config issue ([3e9569a](https://github.com/ryparker/jest-docblock-runner/commit/3e9569a642cb64bc72a689bfe8f7b5e7f7cddd62))
+
+
+### Features
+
+* **working implementation:** added support for pragma detection and test case filter in jest runner ([519372a](https://github.com/ryparker/jest-docblock-runner/commit/519372ad731aaeca020ec4659f56d3205e4540da))
+
 # [0.1.1](https://github.com/ryparker/jest-docblock-runner/compare/v1.0.0...v1.1.0) (2020-07-21)
 
 
