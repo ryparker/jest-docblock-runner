@@ -49,6 +49,10 @@ export default class AllureTestRunner extends TestRunner {
 		for (const arg of cliArgs) {
 			const [key, value] = arg.split('=', 2);
 
+			if (!value) {
+				continue;
+			}
+
 			/** @privateRemarks
 			 *  Removing "--" prefix from key.
 			 *  Removing possible spaces from comma separated values.
