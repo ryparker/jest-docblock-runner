@@ -1,5 +1,5 @@
 import type {Test as JestTest} from 'jest-runner';
-import * as fs from 'fs';
+import {readFileSync} from 'fs';
 import {parse as parseDocBlockPragmas} from 'jest-docblock';
 
 export type TestBlock = {
@@ -21,7 +21,7 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 	const matchingTestFiles: JestTest[] = [];
 
 	for (const testFile of testFiles) {
-		const source = fs.readFileSync(testFile.path).toString();
+		const source = readFileSync(testFile.path).toString();
 
 		const testBlocks = _findTestBlocksWithPragmas(source);
 
@@ -32,7 +32,7 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 		const matchingTestBlocks = testBlocks.filter(testBlock => _doPragmasHaveMatchingValues(testBlock.pragmas, pragmasToMatch));
 
 		if (matchingTestBlocks.length > 0) {
-			const testNamePattern = matchingTestBlocks.map(testBlock => testBlock.name).join('|');
+			const testNamePattern = matchingTestBlocks.map(testBlock => _escapeRegExp(testBlock.name)).join('|');
 
 			/** @privateRemarks
 			 *  Typescript expects JestTest to be readonly.
@@ -53,6 +53,10 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 	}
 
 	return matchingTestFiles;
+}
+
+function _escapeRegExp(string: string) {
+	return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
 function _findTestBlocksWithPragmas(source: string) {

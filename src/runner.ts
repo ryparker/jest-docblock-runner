@@ -40,7 +40,7 @@ export default class AllureTestRunner extends TestRunner {
 		let testsToRun: JestTest[] = tests;
 
 		if (this._userArgs && Object.keys(this._userArgs).length > 0) {
-			console.debug('Jest DocBlock runner detected user arguments:', this._userArgs);
+			console.info('Jest DocBlock runner detected user arguments:', this._userArgs);
 
 			const filteredTests = filterByPragma(tests, this._userArgs);
 
@@ -56,17 +56,17 @@ export default class AllureTestRunner extends TestRunner {
 		const collectedArgs: Record<string, string[]> = {};
 
 		for (const arg of cliArgs) {
-			const [key, value] = arg.split('=', 2);
+			let [key, value] = arg.split('=', 2);
 
-			if (!value) {
+			if (!value || key === '-t') {
 				continue;
 			}
 
-			/** @privateRemarks
-			 *  Removing "--" prefix from key.
-			 *  Removing possible spaces from comma separated values.
-			 */
-			collectedArgs[key.slice(2)] = value.split(',').map(s => s.trim());
+			if (key.includes('-')) {
+				key = key.replace(/-/g, '');
+			}
+
+			collectedArgs[key] = value.split(',').map(s => s.trim());
 		}
 
 		return collectedArgs;
