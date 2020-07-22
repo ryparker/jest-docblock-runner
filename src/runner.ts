@@ -24,7 +24,10 @@ export default class AllureTestRunner extends TestRunner {
 		super(globalConfig, context);
 
 		const cliArgs = process.argv.slice(2);
-		this._userArgs = this._extractArgs(cliArgs);
+
+		if (Array.isArray(cliArgs) && cliArgs.length > 0) {
+			this._userArgs = this._extractArgs(cliArgs);
+		}
 	}
 
 	async runTests(
@@ -34,16 +37,16 @@ export default class AllureTestRunner extends TestRunner {
 		onResult: JestOnTestSuccess,
 		onFailure: JestOnTestFailure,
 		options: JestTestRunnerOptions): Promise<void> {
-		const testsToRun = this._userArgs ? filterByPragma(tests, this._userArgs) : tests;
+		console.debug('User arguments:', this._userArgs);
+
+		const testsToRun = this._userArgs && Object.keys(this._userArgs).length > 0 ?
+			filterByPragma(tests, this._userArgs) :
+			tests;
 
 		return super.runTests(testsToRun, watcher, onStart, onResult, onFailure, options);
 	}
 
 	private _extractArgs(cliArgs: string[]) {
-		if (cliArgs.length === 0) {
-			return;
-		}
-
 		const collectedArgs: Record<string, string[]> = {};
 
 		for (const arg of cliArgs) {
