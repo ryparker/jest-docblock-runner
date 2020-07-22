@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.0...v0.2.1) (2020-07-22)
+
+
+### Bug Fixes
+
+* **filter:** filter has been fixed and improved see changelog for details ([5efb220](https://github.com/ryparker/jest-docblock-runner/commit/5efb220a6ab5d7cf117972de85a9c2f9e4104aca))
+
 # [0.2.0](https://github.com/ryparker/jest-docblock-runner/compare/v0.1.2...v0.2.0) (2020-07-22)
 
 
