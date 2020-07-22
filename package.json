@@ -43,7 +43,7 @@
   },
   "lint-staged": {
     "./src/**/*": [
-      "xo fix src"
+      "xo src --fix"
     ]
   },
   "release": {
