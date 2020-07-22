@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.3...v0.2.4) (2020-07-22)
+
+
+### Bug Fixes
+
+* **runner:** added condition to run all tests if the filter did not detect any matching tests ([8b4ce96](https://github.com/ryparker/jest-docblock-runner/commit/8b4ce96cb416af8e2c93336fa6da515e584cd57e))
+
 ## [0.2.3](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.2...v0.2.3) (2020-07-22)
 
 
