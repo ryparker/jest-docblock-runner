@@ -18,7 +18,7 @@ export type TestBlock = {
 };
 
 export default class AllureTestRunner extends TestRunner {
-	private readonly _userArgs?: Record<string, string[]> = {};
+	private readonly _userArgs?: Record<string, string[]>;
 
 	constructor(globalConfig: Config.GlobalConfig, context?: JestTestRunnerContext) {
 		super(globalConfig, context);
@@ -37,11 +37,17 @@ export default class AllureTestRunner extends TestRunner {
 		onResult: JestOnTestSuccess,
 		onFailure: JestOnTestFailure,
 		options: JestTestRunnerOptions): Promise<void> {
-		console.debug('User arguments:', this._userArgs);
+		let testsToRun: JestTest[] = tests;
 
-		const testsToRun = this._userArgs && Object.keys(this._userArgs).length > 0 ?
-			filterByPragma(tests, this._userArgs) :
-			tests;
+		if (this._userArgs && Object.keys(this._userArgs).length > 0) {
+			console.debug('Jest DocBlock runner detected user arguments:', this._userArgs);
+
+			const filteredTests = filterByPragma(tests, this._userArgs);
+
+			if (filteredTests.length > 0) {
+				testsToRun = filteredTests;
+			}
+		}
 
 		return super.runTests(testsToRun, watcher, onStart, onResult, onFailure, options);
 	}
