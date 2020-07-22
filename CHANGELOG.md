@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.2...v0.2.3) (2020-07-22)
+
+
+### Bug Fixes
+
+* **runner:** added more undefined checks before processing args ([5cc2620](https://github.com/ryparker/jest-docblock-runner/commit/5cc2620a148dd55ab8290fca7f2f54dce9c43382))
+
 ## [0.2.2](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.1...v0.2.2) (2020-07-22)
 
 
