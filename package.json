@@ -35,6 +35,17 @@
       "plugin:jest/recommended"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*": [
+      "xo fix src"
+    ]
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -61,8 +72,10 @@
     "eslint": "^7.5.0",
     "eslint-config-xo-typescript": "^0.31.0",
     "eslint-plugin-jest": "^23.18.0",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-circus": "^26.1.0",
+    "lint-staged": "^10.2.11",
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",

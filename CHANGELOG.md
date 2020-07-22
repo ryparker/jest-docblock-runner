@@ -3,7 +3,7 @@
 
 ### Features
 
-* **filter improvements:** test.each support and properly removing all docBlock "\t"s ([1b0f7b6](https://github.com/ryparker/jest-docblock-runner/commit/1b0f7b6ac9dfefcaf5bc058ead65339e98981c48))
+* **filter improvements:** test.each support and properly removing all instances of `\t` in docBlocks ([1b0f7b6](https://github.com/ryparker/jest-docblock-runner/commit/1b0f7b6ac9dfefcaf5bc058ead65339e98981c48))
 
 ## [0.1.2](https://github.com/ryparker/jest-docblock-runner/compare/v0.1.1...v0.1.2) (2020-07-21)
 
