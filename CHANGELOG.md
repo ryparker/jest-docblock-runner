@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.1...v0.2.2) (2020-07-22)
+
+
+### Bug Fixes
+
+* **runner:** added null/undefined check in _extractArgs to avoid splitting an undefined ([364811f](https://github.com/ryparker/jest-docblock-runner/commit/364811f60365444344a4b718b2eb1a62d8f55ca6))
+
 ## [0.2.1](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.0...v0.2.1) (2020-07-22)
 
 
