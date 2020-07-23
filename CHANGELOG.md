@@ -1,3 +1,10 @@
+## [0.2.5](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.4...v0.2.5) (2020-07-23)
+
+
+### Bug Fixes
+
+* **filter-by-pragma:** fix for unexpectidly skipping test names with special regexp characters ([1e9aea2](https://github.com/ryparker/jest-docblock-runner/commit/1e9aea2e2da6136aa3d75a5b31355775784e6563))
+
 ## [0.2.4](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.3...v0.2.4) (2020-07-22)
 
 
