@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.7...v0.2.8) (2020-07-23)
+
+
+### Bug Fixes
+
+* **postinstall script:** using npx in postinstall script ([2ce8bd4](https://github.com/ryparker/jest-docblock-runner/commit/2ce8bd46a5050e64e1622af15fff0d869157c7d1))
+
 ## [0.2.7](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.6...v0.2.7) (2020-07-23)
 
 
