@@ -1,3 +1,10 @@
+## [0.2.6](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.5...v0.2.6) (2020-07-23)
+
+
+### Bug Fixes
+
+* **testnamepattern regex:** improved testNamePattern regex ([34e8ce9](https://github.com/ryparker/jest-docblock-runner/commit/34e8ce927340f27f22c9fc6f71c92d027b75ad67))
+
 ## [0.2.5](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.4...v0.2.5) (2020-07-23)
 
 
