@@ -6,7 +6,8 @@
   "author": "Ryan Parker <ryan.parker3@outlook.com>",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "patches"
   ],
   "main": "dist",
   "types": "dist/index.d.ts",
