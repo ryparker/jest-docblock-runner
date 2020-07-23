@@ -32,7 +32,7 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 		const matchingTestBlocks = testBlocks.filter(testBlock => _doPragmasHaveMatchingValues(testBlock.pragmas, pragmasToMatch));
 
 		if (matchingTestBlocks.length > 0) {
-			const testNamePattern = matchingTestBlocks.map(testBlock => _escapeRegExp(testBlock.name)).join('|');
+			const testNamePattern = matchingTestBlocks.map(testBlock => `^${_escapeRegExp(testBlock.name)}$`).join('|');
 
 			/** @privateRemarks
 			 *  Typescript expects JestTest to be readonly.
@@ -45,7 +45,7 @@ function _filterFileTestCasesByPragma(testFiles: JestTest[], pragmasToMatch: Rec
 				...testFile.context,
 				config: {
 					...testFile.context.config,
-					testNamePattern
+					testNamePattern: `(${testNamePattern})`
 				}
 			}
 			});

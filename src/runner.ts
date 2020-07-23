@@ -40,12 +40,16 @@ export default class AllureTestRunner extends TestRunner {
 		let testsToRun: JestTest[] = tests;
 
 		if (this._userArgs && Object.keys(this._userArgs).length > 0) {
-			console.info('Jest DocBlock runner detected user arguments:', this._userArgs);
+			console.info('Jest-DocBlock-runner: detected user arguments:', this._userArgs);
 
 			const filteredTests = filterByPragma(tests, this._userArgs);
 
 			if (filteredTests.length > 0) {
 				testsToRun = filteredTests;
+				// TestsToRun.map(t => {
+				// 	console.debug({t});
+				// 	console.debug(`testNamePattern: ${t.context.config.testNamePattern}`);
+				// });
 			}
 		}
 
