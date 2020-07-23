@@ -15,7 +15,7 @@ This project is contingent on [code changes to be approved and merged](https://g
 
 If for some reason the patches were not applied automatically you can apply them by running:
 ```shell
-yarn run postinstall
+npx patch-package --patch-dir="./node_modules/jest-docblock-runner/patches"
 ```
 
 ## 🚀 Quick start
@@ -26,7 +26,13 @@ yarn run postinstall
 yarn add --dev jest-docblock-runner
 ```
 
-2. Update Jest configuration:
+2. Apply the patches to jest-circus, jest-jasmine2, jest-types, and jest-runner
+
+```shell
+npx patch-package --patch-dir="./node_modules/jest-docblock-runner/patches"
+```
+
+3. Update Jest configuration:
 
 __See Jest documentation for more information.__
 
