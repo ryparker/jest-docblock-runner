@@ -1,3 +1,11 @@
+## [0.2.9](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.8...v0.2.9) (2020-07-23)
+
+
+### Bug Fixes
+
+* **reverted to using patch-package as postinstall script:** required in order to build TS files ([6a30a81](https://github.com/ryparker/jest-docblock-runner/commit/6a30a81a865d8d1d792b7c25eac27225a8c3134b))
+* **updated postinstall script and readme:** changed postinstall script to use CWD ([fb0793f](https://github.com/ryparker/jest-docblock-runner/commit/fb0793f1dc35ce4bf3b2e4a3176d40992ea66a96))
+
 ## [0.2.8](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.7...v0.2.8) (2020-07-23)
 
 
