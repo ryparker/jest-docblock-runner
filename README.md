@@ -20,21 +20,21 @@ npx patch-package --patch-dir="./node_modules/jest-docblock-runner/patches"
 
 ## 🚀 Quick start
 
-1. Add dependency to project
+1. **Add dependency to project**
 
 ```shell
 yarn add --dev jest-docblock-runner
 ```
 
-2. Apply the patches to jest-circus, jest-jasmine2, jest-types, and jest-runner
+2. **Apply the patches to jest-circus, jest-jasmine2, jest-types, and jest-runner**
 
 ```shell
 npx patch-package --patch-dir="./node_modules/jest-docblock-runner/patches"
 ```
 
-3. Update Jest configuration:
+3. **Update Jest configuration**
 
-__See Jest documentation for more information.__
+_See the [Jest documentation](https://jestjs.io/docs/en/configuration#runner-string) for more information._
 
 ```js
 // Jest.config.js
@@ -45,10 +45,11 @@ __See Jest documentation for more information.__
 }
 ```
 
-3. Add DocBlocks with pragmas to your tests
+4. **Add DocBlock pragmas to your tests**
 
 ```js
 // example.test.js
+
 test('bank records update, when I withdraw $100 USD', () => {
   /**
    * @severity critical
@@ -58,13 +59,13 @@ test('bank records update, when I withdraw $100 USD', () => {
 })
 ```
 
-4. Run only the marked tests
+4. **Run specific marked tests**
 
 ```shell
 yarn run jest --severity=critical
 ```
 
-__Note: This will accept comma separated values and/or multiple flags.__
+_Note: This will accept comma separated values and/or multiple flags._
 
 ## TODO:
 

@@ -12,7 +12,7 @@
   "main": "dist",
   "types": "dist/index.d.ts",
   "scripts": {
-    "postinstall": "npx patch-package --patch-dir=\"./patches\"",
+    "postinstall": "npx patch-package --patch-dir=\"node_modules/jest-docblock-runner/patches\"",
     "build": "yarn clean && tsc",
     "test": "yarn build && jest",
     "lint": "xo src",
