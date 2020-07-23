@@ -1,3 +1,10 @@
+## [0.2.7](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.6...v0.2.7) (2020-07-23)
+
+
+### Bug Fixes
+
+* **patches:** added patches to package files ([33cf2b2](https://github.com/ryparker/jest-docblock-runner/commit/33cf2b2a6b3a7bb6320073f4352fdcf14a9bd0f4))
+
 ## [0.2.6](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.5...v0.2.6) (2020-07-23)
 
 
