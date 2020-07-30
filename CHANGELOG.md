@@ -1,3 +1,25 @@
+# [1.2.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.1.0...v1.2.0) (2020-07-30)
+
+
+### Bug Fixes
+
+* **filter:** filter has been fixed and improved see changelog for details ([5efb220](https://github.com/ryparker/jest-docblock-runner/commit/5efb220a6ab5d7cf117972de85a9c2f9e4104aca))
+* **filter-by-pragma:** fix for unexpectidly skipping test names with special regexp characters ([1e9aea2](https://github.com/ryparker/jest-docblock-runner/commit/1e9aea2e2da6136aa3d75a5b31355775784e6563))
+* **patches:** added patches to package files ([33cf2b2](https://github.com/ryparker/jest-docblock-runner/commit/33cf2b2a6b3a7bb6320073f4352fdcf14a9bd0f4))
+* **postinstall script:** using npx in postinstall script ([2ce8bd4](https://github.com/ryparker/jest-docblock-runner/commit/2ce8bd46a5050e64e1622af15fff0d869157c7d1))
+* **reverted to using patch-package as postinstall script:** required in order to build TS files ([6a30a81](https://github.com/ryparker/jest-docblock-runner/commit/6a30a81a865d8d1d792b7c25eac27225a8c3134b))
+* **runner:** added condition to run all tests if the filter did not detect any matching tests ([8b4ce96](https://github.com/ryparker/jest-docblock-runner/commit/8b4ce96cb416af8e2c93336fa6da515e584cd57e))
+* **runner:** added more undefined checks before processing args ([5cc2620](https://github.com/ryparker/jest-docblock-runner/commit/5cc2620a148dd55ab8290fca7f2f54dce9c43382))
+* **runner:** added null/undefined check in _extractArgs to avoid splitting an undefined ([364811f](https://github.com/ryparker/jest-docblock-runner/commit/364811f60365444344a4b718b2eb1a62d8f55ca6))
+* **testnamepattern regex:** improved testNamePattern regex ([34e8ce9](https://github.com/ryparker/jest-docblock-runner/commit/34e8ce927340f27f22c9fc6f71c92d027b75ad67))
+* **updated postinstall script and readme:** changed postinstall script to use CWD ([fb0793f](https://github.com/ryparker/jest-docblock-runner/commit/fb0793f1dc35ce4bf3b2e4a3176d40992ea66a96))
+* bumped package version to 0.2.0. To fix git/GitHub history ([4b056c9](https://github.com/ryparker/jest-docblock-runner/commit/4b056c9706222d3c1890c618730ee6cfd9e457c2))
+
+
+### Features
+
+* **filter improvements:** test.each support and properly removing all docBlock "\t"s ([1b0f7b6](https://github.com/ryparker/jest-docblock-runner/commit/1b0f7b6ac9dfefcaf5bc058ead65339e98981c48))
+
 ## [0.2.9](https://github.com/ryparker/jest-docblock-runner/compare/v0.2.8...v0.2.9) (2020-07-23)
 
 
