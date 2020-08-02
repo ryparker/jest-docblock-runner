@@ -324,10 +324,10 @@ index 651a9a4..88a2b9a 100644
  };
  export {};
 diff --git a/node_modules/@jest/types/build/Config.d.ts b/node_modules/@jest/types/build/Config.d.ts
-index d79a5d5..9514576 100644
+index f280c29..879ea32 100644
 --- a/node_modules/@jest/types/build/Config.d.ts
 +++ b/node_modules/@jest/types/build/Config.d.ts
-@@ -314,6 +314,7 @@ export declare type ProjectConfig = {
+@@ -320,6 +320,7 @@ export declare type ProjectConfig = {
      testEnvironment: string;
      testEnvironmentOptions: Record<string, any>;
      testMatch: Array<Glob>;

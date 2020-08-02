@@ -1,0 +1,90 @@
+diff --git a/node_modules/jest-jasmine2/build/ExpectationFailed.d.ts b/node_modules/jest-jasmine2/build/ExpectationFailed.d.ts
+index 657f1cc..eacd8f3 100644
+--- a/node_modules/jest-jasmine2/build/ExpectationFailed.d.ts
++++ b/node_modules/jest-jasmine2/build/ExpectationFailed.d.ts
+@@ -4,5 +4,4 @@
+  * This source code is licensed under the MIT license found in the
+  * LICENSE file in the root directory of this source tree.
+  */
+-export default class ExpectationFailed extends Error {
+-}
++export default class ExpectationFailed extends Error {}
+diff --git a/node_modules/jest-jasmine2/build/PCancelable.d.ts b/node_modules/jest-jasmine2/build/PCancelable.d.ts
+index 0791131..7379192 100644
+--- a/node_modules/jest-jasmine2/build/PCancelable.d.ts
++++ b/node_modules/jest-jasmine2/build/PCancelable.d.ts
+@@ -5,13 +5,33 @@
+  * LICENSE file in the root directory of this source tree.
+  */
+ export default class PCancelable<T> extends Promise<T> {
+-    private _pending;
+-    private _canceled;
+-    private _promise;
+-    private _cancel?;
+-    private _reject;
+-    constructor(executor: (onCancel: (cancelHandler: () => void) => void, resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: unknown) => void) => void);
+-    then<TResult1 = T, TResult2 = never>(onFulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onRejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): Promise<TResult1 | TResult2>;
+-    catch<TResult>(onRejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): Promise<T | TResult>;
+-    cancel(): void;
++  private _pending;
++  private _canceled;
++  private _promise;
++  private _cancel?;
++  private _reject;
++  constructor(
++    executor: (
++      onCancel: (cancelHandler: () => void) => void,
++      resolve: (value?: T | PromiseLike<T>) => void,
++      reject: (reason?: unknown) => void,
++    ) => void,
++  );
++  then<TResult1 = T, TResult2 = never>(
++    onFulfilled?:
++      | ((value: T) => TResult1 | PromiseLike<TResult1>)
++      | undefined
++      | null,
++    onRejected?:
++      | ((reason: any) => TResult2 | PromiseLike<TResult2>)
++      | undefined
++      | null,
++  ): Promise<TResult1 | TResult2>;
++  catch<TResult>(
++    onRejected?:
++      | ((reason: any) => TResult | PromiseLike<TResult>)
++      | undefined
++      | null,
++  ): Promise<T | TResult>;
++  cancel(): void;
+ }
+diff --git a/node_modules/jest-jasmine2/build/index.js b/node_modules/jest-jasmine2/build/index.js
+index 7aa8408..770a1a0 100644
+--- a/node_modules/jest-jasmine2/build/index.js
++++ b/node_modules/jest-jasmine2/build/index.js
+@@ -69,7 +69,7 @@ function _interopRequireWildcard(obj) {
+ const JASMINE = require.resolve('./jasmine/jasmineLight');
+ 
+ async function jasmine2(globalConfig, config, environment, runtime, testPath) {
+-  var _runtime$unstable_sho2;
++  var _config$testNamePatte, _runtime$unstable_sho2;
+ 
+   const reporter = new _reporter.default(globalConfig, config, testPath);
+   const jasmineFactory = runtime.requireInternalModule(JASMINE);
+@@ -212,8 +212,16 @@ async function jasmine2(globalConfig, config, environment, runtime, testPath) {
+         globalConfig.enabledTestsMap[spec.result.testPath];
+       return (suiteMap && suiteMap[spec.result.fullName]) || false;
+     };
+-  } else if (globalConfig.testNamePattern) {
+-    const testNameRegex = new RegExp(globalConfig.testNamePattern, 'i');
++  }
++
++  const testNamePattern =
++    (_config$testNamePatte = config.testNamePattern) !== null &&
++    _config$testNamePatte !== void 0
++      ? _config$testNamePatte
++      : globalConfig.testNamePattern;
++
++  if (testNamePattern) {
++    const testNameRegex = new RegExp(testNamePattern, 'i');
+ 
+     env.specFilter = spec => testNameRegex.test(spec.getFullName());
+   } // TODO: remove ? in Jest 26
