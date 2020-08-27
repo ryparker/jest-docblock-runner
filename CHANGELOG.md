@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.2.0...v1.3.0) (2020-08-27)
+
+
+### Features
+
+* **updated to latest jest packages:** also setup a dependency resolution that mem must be above v4 ([1b26d2b](https://github.com/ryparker/jest-docblock-runner/commit/1b26d2be033114d470bc37dcce145a1df9aa2c59))
+
 # [1.2.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.1.0...v1.2.0) (2020-07-30)
 
 
