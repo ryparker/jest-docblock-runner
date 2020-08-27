@@ -1,0 +1,12 @@
+diff --git a/node_modules/@jest/types/build/Config.d.ts b/node_modules/@jest/types/build/Config.d.ts
+index f280c29..879ea32 100644
+--- a/node_modules/@jest/types/build/Config.d.ts
++++ b/node_modules/@jest/types/build/Config.d.ts
+@@ -320,6 +320,7 @@ export declare type ProjectConfig = {
+     testEnvironment: string;
+     testEnvironmentOptions: Record<string, any>;
+     testMatch: Array<Glob>;
++    testNamePattern?: string;
+     testLocationInResults: boolean;
+     testPathIgnorePatterns: Array<string>;
+     testRegex: Array<string | RegExp>;
