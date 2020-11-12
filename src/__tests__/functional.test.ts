@@ -4,11 +4,11 @@ test('all exports are importable, using "import * as Runner"', () => {
 	expect(typeof Runner).toBe('function');
 });
 
-test('test runs, without pragma', () => {
+test('runs, without pragma', () => {
 	expect(1 + 2).toBe(3);
 });
 
-test('test runs, with comment but no pragma', () => {
+test('runs, with comment but no pragma', () => {
 	/**
 	 * This is not a pragma
 	 */
@@ -40,7 +40,7 @@ test('(file1) pragma is detected, when provided an @tag(2)', () => {
 	expect(1 + 2).toBe(3);
 });
 
-test('test runs, with comment but no pragma 2', () => {
+test('runs, with comment but no pragma 2', () => {
 	/**
 	 * This is not a pragma
 	 */
