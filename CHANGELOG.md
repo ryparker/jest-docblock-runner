@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.0...v1.3.1) (2020-11-12)
+
+
+### Bug Fixes
+
+* **updated patches for jest: 26.6.3, jest-circus: 26.6.3, @types/jest: 26.0.15:** package patches ([225f032](https://github.com/ryparker/jest-docblock-runner/commit/225f03242f496d2380b3c0f3b78b1e10f8121a13))
+
 # [1.3.0](https://github.com/ryparker/jest-docblock-runner/compare/v1.2.0...v1.3.0) (2020-08-27)
 
 
