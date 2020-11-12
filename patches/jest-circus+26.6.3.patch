@@ -1,0 +1,25 @@
+diff --git a/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js b/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js
+index 2453b0c..bde5c4c 100644
+--- a/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js
++++ b/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js
+@@ -54,6 +54,7 @@ const initialize = async ({
+   testPath
+ }) => {
+   var _config$injectGlobals;
++  var _config$testNamePatte;
+ 
+   if (globalConfig.testTimeout) {
+     (0, _state.getState)().testTimeout = globalConfig.testTimeout;
+@@ -124,7 +125,11 @@ const initialize = async ({
+     name: 'setup',
+     parentProcess,
+     runtimeGlobals,
+-    testNamePattern: globalConfig.testNamePattern
++    testNamePattern:
++       (_config$testNamePatte = config.testNamePattern) !== null &&
++       _config$testNamePatte !== void 0
++         ? _config$testNamePatte
++         : globalConfig.testNamePattern
+   });
+ 
+   if (config.testLocationInResults) {
