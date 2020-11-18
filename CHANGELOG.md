@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.1...v1.3.2) (2020-11-18)
+
+
+### Bug Fixes
+
+* **package.json:** upgraded all deps ([efe0c07](https://github.com/ryparker/jest-docblock-runner/commit/efe0c073ee485782637331f08524c22adb1a3451))
+
 ## [1.3.1](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.0...v1.3.1) (2020-11-12)
 
 
