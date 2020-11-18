@@ -3,13 +3,14 @@ import type {
 	OnTestStart as JestOnTestStart,
 	OnTestSuccess as JestOnTestSuccess,
 	Test as JestTest,
+	TestRunnerContext as JestTestRunnerContext,
 	TestRunnerOptions as JestTestRunnerOptions,
-	TestWatcher as JestTestWatcher,
-	TestRunnerContext as JestTestRunnerContext
+	TestWatcher as JestTestWatcher
 } from 'jest-runner';
-import type {Config} from '@jest/types';
 
+import type {Config} from '@jest/types';
 import {filterByPragma} from './filter-by-pragma';
+
 import TestRunner = require('jest-runner');
 
 export type TestBlock = {

@@ -61,6 +61,7 @@
   "dependencies": {
     "jest-docblock": "^26.0.0",
     "jest-runner": "^26.6.3",
+    "mem": ">=4.0.0",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0"
   },
@@ -68,7 +69,7 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.7",
+    "@types/node": "^14.14.8",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.13.0",
@@ -81,7 +82,7 @@
     "nyc": "^15.1.0",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.2.2",
+    "semantic-release": "^17.2.3",
     "ts-jest": "^26.4.4",
     "typescript": "^4.0.5",
     "xo": "^0.34.2"
