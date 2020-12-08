@@ -1,6 +1,6 @@
 import type {Test as JestTest} from 'jest-runner';
-import {readFileSync} from 'fs';
 import {parse as parseDocBlockPragmas} from 'jest-docblock';
+import {readFileSync} from 'fs';
 
 export type TestBlock = {
 	testName: string;
