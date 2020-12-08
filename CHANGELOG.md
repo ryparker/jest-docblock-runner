@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.4](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.3...v1.3.4) (2020-12-08)
+
+
+### Bug Fixes
+
+* **package.json:** bump deps ([cd010fc](https://github.com/ryparker/jest-docblock-runner/commit/cd010fc06bbdc12307fa98274139a077c69fd3fb))
+* **yarn.lock:** update lock file ([13c0e14](https://github.com/ryparker/jest-docblock-runner/commit/13c0e14e508a5e0bed064aa615aef32188cdf782))
+
 ## [1.3.3](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.2...v1.3.3) (2020-11-20)
 
 
