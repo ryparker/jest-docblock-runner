@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.5](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.4...v1.3.5) (2020-12-23)
+
+
+### Bug Fixes
+
+* **package.json:** bump @types/jest ([b37324e](https://github.com/ryparker/jest-docblock-runner/commit/b37324e15f2cd308890f6605f243a9972a1694bb))
+
 ## [1.3.4](https://github.com/ryparker/jest-docblock-runner/compare/v1.3.3...v1.3.4) (2020-12-08)
 
 
